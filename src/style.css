@@ -1,1 +1,79 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+body {
+  margin: 0;
+  height: 100vh;
+  font-weight: 100;
+  background: radial-gradient(#a23982, #1f1013);
+  -webkit-overflow-y: hidden;
+  -moz-overflow-y: hidden;
+  -o-overflow-y: hidden;
+  overflow-y: hidden;
+}
+
+.container {
+  width: 300px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: auto;
+}
+
+.balloon {
+  height: 60px;
+  width: 60px;
+  border: 1px dashed black;
+  flex-grow: 1;
+  border-radius: 50%;
+  position: relative;
+  cursor: pointer;
+}
+
+.balloon.popped {
+  visibility: hidden;
+}
+
+.balloon:after {
+  position: absolute;
+  background: inherit;
+  bottom: -5px;
+  left: 47px;
+  display: block;
+  content: "|";
+  height: 10px;
+  width: 3px;
+  border-radius: 100%;
+  border: 1px solid red;
+}
+
+.balloon:hover {
+  animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+.balloon.popped {
+  visibility: hidden;
+}
+
+.balloon.popped:after {
+  visibility: hidden;
+}
+
+h1 {
+  background-image: url(https://media.giphy.com/media/26BROrSHlmyzzHf3i/giphy.gif);
+  background-size: cover;
+  display: flex;
+  /* flex-direction: column; */
+  color: transparent;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  font-family: "Montserrat";
+  height: 25vh;
+  letter-spacing: 1px;
+  -moz-background-clip: text;
+  -webkit-background-clip: text;
+  text-transform: uppercase;
+  font-size: 90px;
+  line-height: 0.75;
+  margin-top: auto;
+}
